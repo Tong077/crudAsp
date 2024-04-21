@@ -1,0 +1,69 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Identity.EntityFramework
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model Crud.Models.customers
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_Layout";
+}
+
+<h1>Edit Customer</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Update" asp-controller="Customer" method="post">
+            <div class="text-bg-danger" asp-validation-summary="ModelOnly"></div>
+
+            <input asp-for="CustomerId" type="hidden" />
+
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label">First Name</label>
+                <input asp-for="FirstName" type="text" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-bg-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label">Last Name</label>
+                <input asp-for="LastName" type="text" class="form-control" />
+                <span asp-validation-for="LastName" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="form-control">Phone Number</label>
+                <input type="tel" asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="form-control">Email</label>
+                <input type="email" asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Street" class="form-control">Street</label>
+                <input type="text" asp-for="Street" class="form-control" />
+                <span asp-validation-for="Street" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="form-control">City</label>
+                <input type="text" asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="State" class="form-control">State</label>
+                <input type="text" asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="zipcode" class="form-control">Zipcode</label>
+                <input type="text" asp-for="zipcode" class="form-control" />
+                <span asp-validation-for="zipcode" class="text-bg-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn btn-success">Save Change</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Back Index</a>
+</div>

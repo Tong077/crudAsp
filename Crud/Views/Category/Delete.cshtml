@@ -1,0 +1,31 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Identity.EntityFramework
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagsHelper
+@model Crud.Models.Category
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Layout";
+}
+
+<h1>Delete Category</h1>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CategoryID)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CategoryID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CategoryName)
+        </dd>
+
+    </dl>
+    <form asp-action="Delete" asp-route-id="@Model.CategoryID">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
